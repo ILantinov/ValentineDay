@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Валентинка</title>
+
+  <style>
+    :root {
+      --bg1: #ff7aa2;
+      --bg2: #ffb3c7;
+      --card: rgba(255,255,255,0.95);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+      font-family: system-ui, Arial, sans-serif;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 24px;
+      text-align: center;
+      width: min(500px, 90%);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .counter {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      position: relative;
+      height: 160px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff3f78;
+      color: white;
+    }
+
+    .no {
+      background: white;
+      color: #ff3f78;
+      border: 2px solid rgba(255,63,120,0.3);
+      position: absolute;
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      transition: left 0.15s ease, top 0.15s ease;
+    }
+
+    .result {
+      font-size: 20px;
+      font-weight: 800;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Ты будешь моей валентинкой? 💖</h1>
+    <div class="counter" id="counter">Попыток убежать: 10</div>
+
+    <div class="actions" id="actions">
+      <button class="yes" id="yesBtn">Да</button>
+      <button class="no" id="noBtn">Нет</button>
+    </div>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const result = document.getElementById("result");
+    const actions = document.getElementById("actions");
+    const counter = document.getElementById("counter");
+
+    let escapesLeft = 10;
+
+    yesBtn.addEventListener("click", () => {
+      result.textContent = "Я так и знал 💘";
+      result.classList.add("show");
+    });
+
+    noBtn.addEventListener("mouseenter", () => {
+      if (escapesLeft <= 0) return;
+
+      const area = actions.getBoundingClientRect();
+      const btn = noBtn.getBoundingClientRect();
+
+      const maxX = area.width - btn.width;
+      const maxY = area.height - btn.height;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+
+      escapesLeft--;
+      counter.textContent = `Попыток убежать: ${escapesLeft}`;
+    });
+
+    noBtn.addEventListener("click", () => {
+      if (escapesLeft <= 0) {
+        result.textContent = "Выбора нет 😏";
+        result.classList.add("show");
+      }
+    });
+  </script>
+
+</body>
+</html>
