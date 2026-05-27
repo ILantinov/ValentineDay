@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Brew | Кофейные зерна</title>
+
+    <link rel="stylesheet" href="Untitled-1.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<div class="tooltip" id="tooltip">
+
+    <h3 id="tTitle"></h3>
+
+    <p><b>Страна:</b> <span id="tOrigin"></span></p>
+
+    <p><b>Вкус:</b> <span id="tTaste"></span></p>
+
+    <p id="tText"></p>
+
+</div>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">
+            Velvet Brew
+        </div>
+
+        <nav class="navbar">
+            <a href="Untitled-1.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="beans.html" class="active">Beans</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="#" class="btn">Order Now</a>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Кофейные зерна</h1>
+
+            <p>
+                Узнай больше о сортах кофе и их уникальных вкусах.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- BEANS SECTION -->
+
+    <section class="drinks">
+
+        <h2 class="section-title">Наши сорта зерен</h2>
+
+        <div class="drink-container">
+
+            <!-- ARABICA -->
+
+            <div class="drink-card bean"
+                 data-title="Арабика"
+                 data-text="Арабика — мягкие и ароматные зерна с лёгкой сладостью и фруктовыми нотами. Самый популярный сорт кофе в мире.">
+
+                <img src="images/arabica.jpg" alt="">
+                <h3>Арабика</h3>
+                <p>Мягкий и ароматный вкус</p>
+
+            </div>
+
+            <!-- ROBUSTA -->
+
+            <div class="drink-card bean"
+                 data-title="Робуста"
+                 data-text="Робуста имеет крепкий, горький вкус и высокое содержание кофеина. Часто используется в эспрессо смесях.">
+
+                <img src="images/robusta.jpg" alt="">
+                <h3>Робуста</h3>
+                <p>Крепкий и насыщенный вкус</p>
+
+            </div>
+
+            <!-- COLOMBIAN -->
+
+            <div class="drink-card bean"
+                 data-title="Колумбийский кофе"
+                 data-text="Колумбийские зерна отличаются сбалансированным вкусом с нотами карамели и шоколада.">
+
+                <img src="images/colombian.jpg" alt="">
+                <h3>Колумбийский</h3>
+                <p>Сбалансированный вкус</p>
+
+            </div>
+
+            <!-- ETHIOPIAN -->
+
+            <div class="drink-card bean"
+                 data-title="Эфиопский кофе"
+                 data-text="Эфиопский кофе обладает цветочным ароматом и фруктовыми нотами. Очень ароматный сорт.">
+
+                <img src="images/ethiopian.jpg" alt="">
+                <h3>Эфиопский</h3>
+                <p>Цветочный аромат</p>
+
+            </div>
+
+            <!-- BRAZILIAN -->
+
+            <div class="drink-card bean"
+                 data-title="Бразильский кофе"
+                 data-text="Бразильские зерна имеют орехово-шоколадный вкус и низкую кислотность.">
+
+                <img src="images/brazilian.jpg" alt="">
+                <h3>Бразильский</h3>
+                <p>Орехово-шоколадный вкус</p>
+
+            </div>
+
+            <!-- GUATEMALAN -->
+
+            <div class="drink-card bean"
+                 data-title="Гватемальский кофе"
+                 data-text="Гватемальский кофе обладает насыщенным телом и нотами какао и специй.">
+
+                <img src="images/guatemalan.jpg" alt="">
+                <h3>Гватемальский</h3>
+                <p>Глубокий и пряный вкус</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about">
+
+        <div class="about-image">
+            <img src="images/beansshop.jpg" alt="">
+        </div>
+
+        <div class="about-content">
+
+            <h2>Почему наши зерна особенные</h2>
+
+            <p>
+                Мы используем только отборные зерна из лучших кофейных регионов мира.
+            </p>
+
+            <br>
+
+            <p>
+                Каждая партия обжаривается с особым вниманием к вкусу и аромату.
+            </p>
+
+            <br>
+
+            <p>
+                Благодаря этому каждый напиток получается уникальным и насыщенным.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="close" id="closeBtn">&times;</span>
+
+            <h2 id="modalTitle">Заголовок</h2>
+
+            <p id="modalText">Описание</p>
+
+        </div>
+
+    </div>
+
+    <div class="drink-container">
+
+    <div class="drink-card bean"
+        data-title="Арабика"
+        data-origin="Эфиопия, Бразилия"
+        data-taste="Мягкий, фруктовый"
+        data-text="Самый популярный сорт кофе в мире с мягким вкусом и ароматом.">
+
+        <img src="images/arabica.jpg" alt="">
+        <h3>Арабика</h3>
+        <p>Мягкий вкус</p>
+
+    </div>
+
+    <div class="drink-card bean"
+        data-title="Робуста"
+        data-origin="Вьетнам, Уганда"
+        data-taste="Крепкий, горький"
+        data-text="Содержит много кофеина, используется в эспрессо смесях.">
+
+        <img src="images/robusta.jpg" alt="">
+        <h3>Робуста</h3>
+        <p>Крепкий вкус</p>
+
+    </div>
+
+</div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Velvet Brew | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

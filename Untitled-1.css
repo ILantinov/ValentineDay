@@ -1,0 +1,352 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* GLOBAL */
+
+section{
+    padding: 100px 10%;
+}
+
+.section-title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/* BUTTONS */
+
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #c8a97e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #a8865d;
+}
+
+.btn-secondary{
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid #c8a97e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover{
+    background: #c8a97e;
+}
+
+/* HEADER */
+
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 10%;
+
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 28px;
+    font-weight: 700;
+    color: #c8a97e;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.navbar a:hover{
+    color: #c8a97e;
+}
+
+/* HERO */
+
+.hero{
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content{
+    max-width: 600px;
+}
+
+.hero-content h1{
+    font-size: 70px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+/* DRINKS */
+
+.drink-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.drink-card{
+    background: #1b1b1b;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.drink-card:hover{
+    transform: translateY(-10px);
+}
+
+.drink-card img{
+    height: 300px;
+    object-fit: cover;
+}
+
+.drink-card h3{
+    font-size: 24px;
+    margin: 20px;
+}
+
+.drink-card p{
+    margin: 0 20px 20px;
+    color: #c8a97e;
+}
+
+/* ABOUT */
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img{
+    border-radius: 10px;
+}
+
+.about-content h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-content p{
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* GALLERY */
+
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.gallery-container img{
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-container img:hover{
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+
+.contact form{
+    max-width: 700px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact input,
+.contact textarea{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #1b1b1b;
+    color: white;
+    font-size: 16px;
+}
+
+.contact textarea{
+    height: 150px;
+    resize: none;
+}
+
+.contact button{
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align: center;
+    padding: 30px;
+    background: #0a0a0a;
+    color: #aaa;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px){
+
+    .header{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content h1{
+        font-size: 50px;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    section{
+        padding: 80px 5%;
+    }
+
+    .hero-content h1{
+        font-size: 38px;
+    }
+
+    .section-title{
+        font-size: 32px;
+    }
+
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+/* FILTER BUTTONS */
+
+.filter-buttons{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.filter-btn{
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    background: #1b1b1b;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.filter-btn:hover{
+    background: #c8a97e;
+}
+
+.filter-btn.active{
+    background: #c8a97e;
+}
+
+/* ACTIVE NAVBAR */
+
+.navbar a.active{
+    color: #c8a97e;
+    font-weight: 600;
+}
+
+/* SMALL TOOLTIP */
+
+.tooltip{
+    position: absolute;
+    display: none;
+
+    width: 220px;
+
+    background: #1b1b1b;
+    color: white;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+    font-size: 13px;
+
+    z-index: 999;
+}
+
+.tooltip h3{
+    color: #c8a97e;
+    margin-bottom: 8px;
+}
+
+.tooltip p{
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+}
